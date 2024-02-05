@@ -29,10 +29,10 @@ class SpecialAdapter(applicationContext: Context, list: ArrayList<String>) : Bas
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
-        var view:View
+        val view:View
         view=inflater.inflate(R.layout.listlay,null)
-        var text=view.findViewById<TextView>(R.id.text5)
-        var but =view.findViewById<Button>(R.id.button2)
+        val text=view.findViewById<TextView>(R.id.text5)
+        val but =view.findViewById<Button>(R.id.button2)
         but.setOnClickListener(View.OnClickListener {
             liste.removeAt(position)
             val intent = Intent(cont?.applicationContext,MainActivity::class.java)
@@ -43,7 +43,7 @@ class SpecialAdapter(applicationContext: Context, list: ArrayList<String>) : Bas
         })
         text.text=liste.get(position)
         text.setOnClickListener(View.OnClickListener {
-            var tost=Toast.makeText(cont,liste.get(position),Toast.LENGTH_LONG)
+            val tost=Toast.makeText(cont,liste.get(position),Toast.LENGTH_LONG)
             tost.show()
         })
         return view

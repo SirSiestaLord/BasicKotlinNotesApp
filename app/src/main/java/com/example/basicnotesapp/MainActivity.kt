@@ -14,12 +14,12 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         var list:ArrayList<String> = ArrayList<String>()
         setContentView(R.layout.newlayout)
-        var button=findViewById<Button>(R.id.button)
-        var edittext=findViewById<EditText>(R.id.editTextText)
-        var listview =findViewById<ListView>(R.id.listviw)
+        val button=findViewById<Button>(R.id.button)
+        val edittext=findViewById<EditText>(R.id.editTextText)
+        val listview =findViewById<ListView>(R.id.listviw)
         if(intent.getStringArrayListExtra("liste")!=null){
             list= intent.getStringArrayListExtra("liste")!!
-            var a=SpecialAdapter(applicationContext,list)
+            val a=SpecialAdapter(applicationContext,list)
             listview.adapter=a
 
         }
@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
 
         button.setOnClickListener(View.OnClickListener {
             list.add(edittext.text.toString())
-            var a=SpecialAdapter(applicationContext,list)
+            val a=SpecialAdapter(applicationContext,list)
             listview.adapter=a
         })
 
